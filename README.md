@@ -2,14 +2,15 @@ Try out the website : https://sql-editor-210.netlify.app/
 
 👨‍🔧 Tech Stack
 React TailwindCSS
-
-👨‍💻 Features
+**
+👨‍💻 Features**
 1) Users can get data of any of the predefined SQL queries either by using SQL Editor or Sidebar Menu.
 2) Users can sort data directly by clicking the Table Headers title.
 3) Users can navigate to different pages using pagination.
 
 
-✍️ Predefined SQL Queries
+✍️ **Predefined SQL Queries**
+
 select * from customers
 select * from categories
 select * from employee_territories
@@ -20,7 +21,9 @@ select * from regions
 select * from shippers
 select * from suppliers
 select * from territories
+
 ⏱ Page Load Time
+
 Page Load time of this website in desktop is coming as 0.3 s
 
 I calculated the performance and load time of this website using PageSpeed Insights.
