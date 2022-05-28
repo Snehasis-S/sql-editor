@@ -4,7 +4,7 @@ import Table from "./Table";
 
 import Loader from "../../assets/imgs/loader.svg";
 
-const TableSection = React.memo(({ query }) => {
+const TableSection = React.memo(({ query,isOpen }) => {
   const { data, error } = useData(query);
 
   const columns = useMemo(() => {
@@ -26,7 +26,9 @@ const TableSection = React.memo(({ query }) => {
   if (error)
     return (
       <section
-        className={"col-start-1 col-end-3 row-start-3 row-end-4 text-white m-6"}
+      className={`${
+        isOpen ? "col-start-2" : "col-start-1"
+      } col-end-3 row-start-3 row-end-4 text-white m-6`}
       >
         <h1 className="text-center font-bold text-xl text-primary-dark">
           Something Went Wrong{" "}
@@ -39,7 +41,9 @@ const TableSection = React.memo(({ query }) => {
   return (
     <>
       <section
-        className={ "col-start-1 col-end-3 row-start-3 row-end-4 text-white mx-6 my-12 lg:mx-12 overflow-hidden"}
+        className={`${
+          isOpen ? "col-start-2" : "col-start-1"
+        } col-end-3 row-start-3 row-end-4 text-white mx-6 my-12 lg:mx-12 overflow-hidden`}
       >
         {data.length > 0 ? (
           <>

@@ -5,7 +5,7 @@ import "ace-builds/src-min-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-github";
 import { Button } from "../reusable/Button";
 
-const Editor = ({ setQuery, value, setValue }) => {
+const Editor = ({ setQuery, value, setValue,isOpen }) => {
   const onChange = (newValue) => {
     setValue(newValue);
   };
@@ -17,7 +17,9 @@ const Editor = ({ setQuery, value, setValue }) => {
 
   return (
     <main
-      className={ "col-start-1 col-end-3 row-start-2 row-end-3 mx-6 my-12 lg:mx-12"}
+    className={`${
+      isOpen ? "col-start-2" : "col-start-1"
+    } col-end-3 row-start-2 row-end-3 mx-6 my-12 lg:mx-12`}
     >
       <label htmlFor="editor">
         <AceEditor

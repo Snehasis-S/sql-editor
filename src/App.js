@@ -2,7 +2,10 @@ import React, { useState, Suspense } from "react";
 import "./assets/output.css";
 import { Toaster } from "react-hot-toast";
 import Loader from "./components/reusable/Loader";
-import Nav from "./components/nav/Nav";
+// import Nav from "./components/nav/Nav";
+const NavigationMenu = React.lazy(() =>
+  import("./components/nav/NavigationMenu")
+);
 
 const Editor = React.lazy(() => import("./components/editor/Editor"));
 const TableSection = React.lazy(() => import("./components/table/TableSection"));
@@ -10,6 +13,7 @@ const TableSection = React.lazy(() => import("./components/table/TableSection"))
 const App = () => {
   const [query, setQuery] = useState("");
   const [value, setValue] = useState("select * from customers");
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
@@ -41,15 +45,21 @@ const App = () => {
           },
         }}
       />
-      <Nav />
       <div className="grid grid-cols-layout-desktop grid-rows-layout-desktop min-h-screen">
         <Suspense fallback={<Loader />}>
+          <NavigationMenu
+            setQuery={setQuery}
+            setValue={setValue}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
           <Editor
             setQuery={setQuery}
             value={value}
             setValue={setValue}
+            isOpen={isOpen}
           />
-          {query ? <TableSection query={query} /> : null}
+          {query ? <TableSection query={query} isOpen={isOpen} /> : null}
         </Suspense>
       </div>
     </>
