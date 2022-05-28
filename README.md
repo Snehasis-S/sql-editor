@@ -1,4 +1,4 @@
-Try out the website : [SQL Editor](https://sql-editor-210.netlify.app/)
+## Try out the website : [SQL Editor](https://sql-editor-210.netlify.app/)
 
 ## 👨‍🔧 Tech Stack
 
@@ -24,13 +24,13 @@ TailwindCSS
 - `select * from suppliers`
 - `select * from territories`
 
-##⏱ Page Load Time
+## ⏱ Page Load Time
 
 `Page Load time of this website in desktop is coming as 0.3 s
 
 I calculated the performance and load time of this website using PageSpeed Insights.`
 ![image](https://user-images.githubusercontent.com/87414843/170837721-a4c2576b-8e9e-41be-82ae-27b18dea6a4c.png)
 
-##🪜 Steps I took to optimize the page load time
+## 🪜 Steps I took to optimize the page load time
 - `1)Used code-splitting with React.Lazy() and Suspense to lazy load the components and split javaScript into multiple chunks using Dynamic runtime Imports for faster page load.`
 - `2)Used React.Memo() to optimize the render performance of functional components.`
